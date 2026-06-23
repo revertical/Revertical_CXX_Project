@@ -55,5 +55,11 @@ jobs:
     - name: Build
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
 
-    - name: Run the project
-      run: ./CXX_Projects || ./CXX_Projects.exe || echo "skipped"
+    - name: Run the project in Linux
+      if: runner.os != 'Windows'
+      shell: bash
+      run: ./CXX_Projects
+
+    - name: Run the project in Windows
+      if: runner.os == 'Windows'
+      run: ./CXX_Projects.exe
