@@ -66,4 +66,4 @@ jobs:
       if: runner.os == 'Windows'
       shell: pwsh
       run: |
-        .\build\CXX_Projects.exe
+        .\build\${{ matrix.build_type }}\CXX_Projects.exe
