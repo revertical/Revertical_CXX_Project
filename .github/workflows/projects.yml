@@ -58,8 +58,13 @@ jobs:
     - name: Run the project in Linux
       if: runner.os != 'Windows'
       shell: bash
-      run: ./CXX_Projects
+      run: |
+        cd build
+        ./CXX_Projects
 
     - name: Run the project in Windows
       if: runner.os == 'Windows'
-      run: ./CXX_Projects.exe
+      shell: pwsh
+      run: |
+        cd build
+        ./CXX_Projects.exe
