@@ -66,5 +66,4 @@ jobs:
       if: runner.os == 'Windows'
       shell: pwsh
       run: |
-        cd build
-        ./CXX_Projects.exe
+        .\build\CXX_Projects.exe
